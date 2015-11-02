@@ -20,5 +20,6 @@ public class LoginActivity extends BaseActivity {
         application.getAuth().getUser().setIsLoggedIn(true);
         startActivity(new Intent (this,MainActivity.class));
         finish();
+        //aca
     }
 }
