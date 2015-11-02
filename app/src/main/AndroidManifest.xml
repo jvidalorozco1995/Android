@@ -8,15 +8,16 @@
         android:name="infrastructure.YoraApplication"
         >
 
-        <activity android:name="activities.LoginActivity">
+        <activity android:name="activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
-        <activity android:name="activities.MainActivity">
 
-        </activity>
+        <activity android:name="activities.LoginActivity"/>
+        <activity android:name="activities.LoginNarrowActivity"/>
+
     </application>
 
 </manifest>
