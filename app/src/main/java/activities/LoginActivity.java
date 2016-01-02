@@ -6,10 +6,12 @@ import android.view.View;
 
 import com.buzz.yora.R;
 
+import fragments.LoginFragment;
+
 /**
  * Created by jorge on 01/11/2015.
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener, LoginFragment.Callbacks {
 
     private static final int REQUEST_NARROW_LOGIN = 1;
     private View loginButton;
@@ -44,5 +46,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void finishLogin() {
         startActivity(new Intent(this,MainActivity.class));
         finish();
+    }
+
+    @Override
+    public void onLoggedIn() {
+     finishLogin();
     }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/include_login_header"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            >
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="Nombre de usuario"
+               android:singleLine="true"
+               android:layout_marginBottom="8dp"
+               android:id="@+id/activity_register_userName"
+               />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:singleLine="true"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/activity_register_Email"
+                android:layout_below="@+id/activity_register_userName"
+                android:inputType="textEmailAddress"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:singleLine="true"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/activity_register_Password"
+                android:inputType="textPassword"
+                android:layout_below="@id/activity_register_Email"
+                />
+
+
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>
