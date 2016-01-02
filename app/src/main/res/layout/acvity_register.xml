@@ -48,8 +48,21 @@
                 android:layout_below="@id/activity_register_Email"
                 />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrate"
+                android:background="@color/primary_color_dark"
+                android:textColor="@color/primary_color_white"
+                android:layout_below="@+id/activity_register_Password"
+                android:id="@+id/activity_register_RegisterButton"
+                />
 
-
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateOnly="true"
+                />
 
         </RelativeLayout>
     </FrameLayout>
