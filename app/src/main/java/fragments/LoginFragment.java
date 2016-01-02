@@ -1,5 +1,6 @@
 package fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import activities.LoginActivity;
  */
 public class LoginFragment extends BaseFragment implements View.OnClickListener {
     private Button loginButton;
+    private Callbacks callbacks;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login,root,false);
@@ -30,8 +32,20 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
     public void onClick(View v) {
         if(v==loginButton){
             /*notificamos a la actividad padre*/
-            ((LoginFragment.Callbacks)getActivity()).onLoggedIn();
+            callbacks.onLoggedIn();
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        callbacks =(Callbacks) context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        callbacks = null;
     }
 
     public interface Callbacks{
