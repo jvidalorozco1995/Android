@@ -11,6 +11,7 @@ import com.buzz.yora.R;
  */
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final int REQUEST_NARROW_LOGIN = 1;
     private View loginButton;
 
     @Override
@@ -26,7 +27,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
      public void onClick(View view){
         if(view== loginButton){
-            startActivity(new Intent(this,LoginNarrowActivity.class));
+            startActivityForResult(new Intent(this, LoginNarrowActivity.class), REQUEST_NARROW_LOGIN);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode!=RESULT_OK){
+            return;
+        }
+        if(resultCode==REQUEST_NARROW_LOGIN){
+            finishLogin();
+        }
+    }
+    //Metodo para finalizar el login
+    public void finishLogin() {
+        startActivity(new Intent(this,MainActivity.class));
+        finish();
     }
 }
