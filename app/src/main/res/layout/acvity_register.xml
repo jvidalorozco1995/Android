@@ -74,6 +74,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:indeterminateOnly="true"
+                android:layout_centerHorizontal="true"
                 android:id="@+id/activity_register_progressBar"
                 />
 
