@@ -25,7 +25,7 @@ public class ExternalLoginActivity extends BaseActivity implements View.OnClickL
         webView = (WebView) findViewById(R.id.activity_external_login_webView);
 
         testButton.setOnClickListener(this);
-        testButton.setText("Log in with: " +getIntent().getStringExtra(EXTRA_EXTERNAL_SERVICE));
+        testButton.setText("Log in with: " + getIntent().getStringExtra(EXTRA_EXTERNAL_SERVICE));
     }
 
     @Override
