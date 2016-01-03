@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.buzz.yora.R;
 
 import infrastructure.YoraApplication;
+import navigation.NavDrawer;
 
 /**
  * Created by jorge on 01/11/2015.
@@ -18,6 +19,8 @@ import infrastructure.YoraApplication;
 public abstract class BaseActivity extends AppCompatActivity {
     protected YoraApplication application;
     protected Toolbar toolbar;
+    protected NavDrawer navDrawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +36,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         if(toolbar != null){
             setSupportActionBar(toolbar);
         }
+    }
+    protected void setNavDrawer(NavDrawer drawer){
+        this.navDrawer = navDrawer;
+        this.navDrawer.create();
+
     }
 }
