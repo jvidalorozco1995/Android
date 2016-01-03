@@ -7,14 +7,13 @@
     <include
         layout="@layout/include_login_header"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:padding="16dp"
             >
 
            <EditText
@@ -22,8 +21,6 @@
                android:layout_height="wrap_content"
                android:hint="Nombre de usuario"
                android:singleLine="true"
-               android:layout_marginRight="8dp"
-               android:layout_marginLeft="8dp"
                android:layout_marginBottom="8dp"
                android:id="@+id/activity_register_userName"
                />
@@ -33,8 +30,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Email"
                 android:singleLine="true"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:id="@+id/activity_register_Email"
                 android:layout_below="@+id/activity_register_userName"
@@ -46,8 +41,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:singleLine="true"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:id="@+id/activity_register_Password"
                 android:inputType="textPassword"
@@ -58,8 +51,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Registrate"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/primary_color_dark"
                 android:textColor="@color/primary_color_white"
@@ -70,8 +61,6 @@
             <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:indeterminateOnly="true"
                 android:layout_centerHorizontal="true"
@@ -81,6 +70,6 @@
                 />
 
         </RelativeLayout>
-    </FrameLayout>
+
 
 </LinearLayout>

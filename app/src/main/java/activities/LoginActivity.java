@@ -14,7 +14,9 @@ import fragments.LoginFragment;
 public class LoginActivity extends BaseActivity implements View.OnClickListener, LoginFragment.Callbacks {
 
     private static final int REQUEST_NARROW_LOGIN = 1;
+    private static final int REQUEST_REGISTER = 2;
     private View loginButton;
+    private View registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,23 +24,29 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         setContentView(R.layout.activity_login);
 
         loginButton = findViewById(R.id.activity_login_login);
-        if(loginButton!=null){
+        registerButton = findViewById(R.id.activity_register_RegisterButton);
+
+        if(loginButton != null){
             loginButton.setOnClickListener(this);
         }
+        registerButton.setOnClickListener(this);
     }
     @Override
      public void onClick(View view){
         if(view== loginButton){
             startActivityForResult(new Intent(this, LoginNarrowActivity.class), REQUEST_NARROW_LOGIN);
+        }else if(view == registerButton){
+            startActivityForResult(new Intent(this, RegisterActivity.class), REQUEST_REGISTER);
+
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode!=RESULT_OK){
+        if(resultCode !=RESULT_OK){
             return;
         }
-        if(resultCode==REQUEST_NARROW_LOGIN){
+        if(requestCode == REQUEST_NARROW_LOGIN || requestCode == REQUEST_REGISTER){
             finishLogin();
         }
     }
