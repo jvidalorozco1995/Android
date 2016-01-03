@@ -32,13 +32,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void setContentView(@LayoutRes int layoutResId) {
         super.setContentView(layoutResId);
 
-        toolbar =(Toolbar)findViewById(R.id.include_login_header);
+        toolbar =(Toolbar)findViewById(R.id.include_toolbar_toolbar);
         if(toolbar != null){
             setSupportActionBar(toolbar);
         }
     }
     protected void setNavDrawer(NavDrawer drawer){
-        this.navDrawer = navDrawer;
+        this.navDrawer = drawer;
         this.navDrawer.create();
 
     }

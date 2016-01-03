@@ -32,7 +32,7 @@ public class NavDrawer {
     public NavDrawer(BaseActivity activity) {
         this.activity = activity;
         items = new ArrayList<NavDrawerItem>();
-        drawerLayout = (DrawerLayout)activity.findViewById(R.id.drawer_layout)
+        drawerLayout = (DrawerLayout)activity.findViewById(R.id.drawer_layout);
         navDrawerView =(ViewGroup) activity.findViewById(R.id.nav_drawer);
 
         if(drawerLayout==null || navDrawerView ==null){
@@ -113,6 +113,8 @@ public class NavDrawer {
                 throw  new RuntimeException("Nav drawer item "+text+ "no se puede atachar al viewgroup");
 
             view = inflater.inflate(R.layout.list_item_nav_drawer,container);
+            view.setOnClickListener(this);
+
             icon =(ImageView)view.findViewById(R.id.list_item_nav_drawer_icon);
             textView =(TextView) view.findViewById(R.id.list_item_nav_drawer_text);
             badgeTextView =(TextView)view.findViewById(R.id.list_item_nav_drawer_badge);

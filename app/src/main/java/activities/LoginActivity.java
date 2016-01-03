@@ -28,7 +28,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         setContentView(R.layout.activity_login);
 
         loginButton = findViewById(R.id.activity_login_login);
-        registerButton = findViewById(R.id.activity_register_RegisterButton);
+        registerButton = findViewById(R.id.activity_login_register);
         facebookLoginButton = findViewById(R.id.activity_login_facebook);
         googleLoginButton = findViewById(R.id.activity_login_google);
 

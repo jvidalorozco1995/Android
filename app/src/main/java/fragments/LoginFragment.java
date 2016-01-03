@@ -1,5 +1,6 @@
 package fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -38,9 +39,9 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        callbacks =(Callbacks) context;
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        callbacks =(Callbacks) activity;
     }
 
     @Override

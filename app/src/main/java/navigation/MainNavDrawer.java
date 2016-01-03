@@ -14,9 +14,9 @@ import activities.MainActivity;
 public class MainNavDrawer extends NavDrawer{
     public MainNavDrawer(final BaseActivity activity) {
         super(activity);
-        addItem(new ActivityDrawerItem(MainActivity.class, "Inbox", null, R.mipmap.ic_launcher, 0));
+        addItem(new ActivityDrawerItem(MainActivity.class, "Inbox", null, R.mipmap.ic_launcher, R.id.include_main_nav_drawer_topItems));
 
-        addItem(new BasicNavDrawerItem("Logout",null,R.mipmap.ic_launcher,0){
+        addItem(new BasicNavDrawerItem("Logout",null,R.mipmap.ic_launcher,R.id.include_main_nav_drawer_bottomItems){
 
             @Override
             public void onClick(View v) {
