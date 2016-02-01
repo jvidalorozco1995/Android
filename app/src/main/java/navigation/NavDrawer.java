@@ -112,7 +112,8 @@ public class NavDrawer {
             if(container == null)
                 throw  new RuntimeException("Nav drawer item "+text+ "no se puede atachar al viewgroup");
 
-            view = inflater.inflate(R.layout.list_item_nav_drawer,container);
+            view = inflater.inflate(R.layout.list_item_nav_drawer,container,false);
+            container.addView(view);
             view.setOnClickListener(this);
 
             icon =(ImageView)view.findViewById(R.id.list_item_nav_drawer_icon);
@@ -190,14 +191,21 @@ public class NavDrawer {
         @Override
         public void onClick(View v) {
             navDrawer.setOpen(false);
-            if(navDrawer.activity.getClass() == targetActivity)
+
+            final BaseActivity activity = navDrawer.activity;
+            if(activity.getClass() == targetActivity)
                 return;
 
             super.onClick(v);
 
-            //TODO: animations
-            navDrawer.activity.startActivity(new Intent(navDrawer.activity,targetActivity));
-            navDrawer.activity.finish();
+            activity.fadeOut(new BaseActivity.FadeOutListener() {
+                @Override
+                public void onFadeOutEnd() {
+                    activity.startActivity(new Intent(activity,targetActivity));
+                    activity.finish();
+                }
+            });
+
         }
     }
 

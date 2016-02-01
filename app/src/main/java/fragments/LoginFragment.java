@@ -34,6 +34,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
         if(v==loginButton){
             /*notificamos a la actividad padre*/
             application.getAuth().getUser().setIsLoggedIn(true);
+            application.getAuth().getUser().setDisplayName("Jorge Vidal");
             callbacks.onLoggedIn();
         }
     }

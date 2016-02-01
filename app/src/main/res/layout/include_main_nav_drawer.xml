@@ -30,7 +30,7 @@
             android:layout_alignTop="@id/include_main_nav_drawer_avatar"
             android:id="@+id/include_main_nav_drawer_displayName"
             android:text="Jorge Vidal"
-            android:textColor="#8aFFFFFF"
+            android:textColor="#FFFFFF"
             />
 
     </RelativeLayout>
